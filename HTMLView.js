@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import htmlToElement from './htmlToElement';
-import {Linking, StyleSheet, View, ViewPropTypes} from 'react-native';
+import {Linking, StyleSheet, View, ViewPropTypes, Text} from 'react-native';
 
 const boldStyle = {fontWeight: '500'};
 const italicStyle = {fontStyle: 'italic'};
@@ -73,7 +73,7 @@ class HtmlView extends Component {
 
   render() {
     if (this.state.element) {
-      return <View children={this.state.element} style={this.props.style} />;
+      return <Text children={this.state.element} style={this.props.style} />;
     }
     return <View style={this.props.style} />;
   }
