@@ -49,9 +49,11 @@ export default function htmlToElement(rawHtml, opts, done) {
 
       if (node.type == 'tag') {
         if (node.name == 'img') {
-          return (
-            <Img key={index} attribs={node.attribs} />
-          );
+          if(node.attribs.src && !node.attribs.src.includes(' href=')) {
+            return (
+              <Img key={index} attribs={node.attribs} />
+            );
+          }
         }
 
         let linkPressHandler = null;
